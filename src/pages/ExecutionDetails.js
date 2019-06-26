@@ -58,10 +58,10 @@ class ExecutionDetails extends React.Component {
             if (!result.name) {
                 return "Invalid server response, missing 'name' key in DescribeExecution action output";
             }
-            if (!result.input) {
+            if (result.input === undefined) {
                 return "Invalid server response, missing 'input' key in DescribeExecution action output";
             }
-            if (!result.output) {
+            if (result.output === undefined) {
                 return "Invalid server response, missing 'output' key in DescribeExecution action output";
             }
             executionDetails = result;
@@ -152,7 +152,7 @@ class ExecutionDetails extends React.Component {
                             </Card>
                         </Grid>
                     </Grid>
-                    <Graph executionArn={this.executionArn} stateId={this.stateId} stateMachineArn={this.stateMachineArn} classes={this.classes} />
+                    <Graph executionArn={this.executionArn} stateId={this.stateId} stateMachineArn={this.stateMachineArn} clss={this.classes} />
                 </div>
                 <Grid container spacing={16}>
                     <Grid item xs>
